@@ -1,6 +1,6 @@
 import Navbar from "./Navbar"
 import Project from "./Pages/Project"
-import Home from "./Pages/Home"
+import Home from "./PasswordLoginWithFirebase/Home"
 import About from "./Pages/About"
 import SoundLibrary from "./SoundLibrary";
 import Track from "./Pages/Track";
