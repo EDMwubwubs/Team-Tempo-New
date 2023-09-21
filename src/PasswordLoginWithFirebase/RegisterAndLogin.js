@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { database } from "./PasswordLoginWithFirebase/FirebaseConfig";
+import { database } from "./FirebaseConfig";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -19,7 +19,7 @@ function RegisterAndLogin() {
       createUserWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
-          history("/home");
+          history("/about");
         })
         .catch((err) => {
           alert(err.code);
@@ -29,7 +29,7 @@ function RegisterAndLogin() {
       signInWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
-          history("/home");
+          history("/about");
         })
         .catch((err) => {
           alert(err.code);
