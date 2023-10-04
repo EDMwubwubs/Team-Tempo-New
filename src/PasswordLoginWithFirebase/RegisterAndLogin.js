@@ -4,7 +4,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import Track from "../Pages/Track";
 
 function RegisterAndLogin() {
   const [login, setLogin] = useState(false);
@@ -19,7 +20,7 @@ function RegisterAndLogin() {
       createUserWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
-          history("/about");
+          history("/App")
         })
         .catch((err) => {
           alert(err.code);
@@ -29,7 +30,7 @@ function RegisterAndLogin() {
       signInWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
-          history("/about");
+          history("/App")
         })
         .catch((err) => {
           alert(err.code);
@@ -40,6 +41,7 @@ function RegisterAndLogin() {
   const handleReset = ()=>{
     history("/reset");
   }
+
   return (
     <div className="App">
       {/* Registration and login Screen */}
